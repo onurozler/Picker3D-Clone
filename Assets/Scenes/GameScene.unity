@@ -165,8 +165,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 5.4882793, z: 1}
+  m_Center: {x: 0, y: 2.2441397, z: 0}
 --- !u!23 &1850504
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -383,7 +383,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: -0.26009855, y: -0.000881351, z: 0.00019491155, w: -0.96558166}
-  m_LocalPosition: {x: 0.08, y: 6.89, z: -7.97}
+  m_LocalPosition: {x: 0.08, y: 8.87, z: -10.57}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -495,6 +495,8 @@ GameObject:
   - component: {fileID: 1562952169}
   - component: {fileID: 1562952170}
   - component: {fileID: 1562952171}
+  - component: {fileID: 1562952172}
+  - component: {fileID: 1562952173}
   m_Layer: 0
   m_Name: PickerBase
   m_TagString: Untagged
@@ -541,6 +543,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 575c8ca675f3b5441a28b5e0232f7fa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1562952172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562952168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d89a39bb9f95dc429c22be9560ca759, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &1562952173
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562952168}
+  serializedVersion: 2
+  m_Mass: 0.1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!1 &1690998445
 GameObject:
   m_ObjectHideFlags: 0
@@ -585,8 +615,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 4.2879944, z: 1}
+  m_Center: {x: 0, y: 1.6439972, z: 0}
 --- !u!23 &1690998448
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -688,8 +718,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.25333178, y: 0.26129955, z: 1.4632788}
-  m_Center: {x: 0.5861139, y: 0.1420418, z: 0.52561355}
+  m_Size: {x: 0.25333178, y: 0.28920963, z: 1.4632788}
+  m_Center: {x: 0.5861127, y: 0.096241415, z: 0.52561283}
 --- !u!65 &7848906893113567229
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -701,8 +731,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.4969791, y: 0.87652, z: 0.18552196}
-  m_Center: {x: 1.2104895, y: -0.16780895, z: -0.29501772}
+  m_Size: {x: 1.4969792, y: 0.7455277, z: 0.18552196}
+  m_Center: {x: 1.210487, y: -0.23330472, z: -0.29501715}
 --- !u!65 &7848906893113567230
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -714,8 +744,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.28755173, y: 0.4193686, z: 1.6696885}
-  m_Center: {x: 2.0465848, y: 0.19601443, z: 0.6043521}
+  m_Size: {x: 0.28755173, y: 0.25988668, z: 1.6696885}
+  m_Center: {x: 2.0465765, y: 0.116272874, z: 0.6043507}
 --- !u!23 &9056127480941041223
 MeshRenderer:
   m_ObjectHideFlags: 0

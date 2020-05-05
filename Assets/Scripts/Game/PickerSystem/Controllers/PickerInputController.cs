@@ -7,6 +7,7 @@ namespace Game.PickerSystem.Controllers
     public class PickerInputController : MonoBehaviour
     {
         public Action<float> OnMousePressing;
+        public Action OnMouseReleasing;
 
         private Camera _pickerCamera;
         private Vector3 _mousePos;
@@ -22,11 +23,16 @@ namespace Game.PickerSystem.Controllers
             if (Input.GetMouseButton(0))
             {
                 var position = Input.mousePosition;
-                _distanceToScreen = _pickerCamera.WorldToScreenPoint(gameObject.transform.position).z;
-                _mousePos = _pickerCamera.ScreenToWorldPoint(new Vector3(position.x, position.y, _distanceToScreen ));
+                if (position.x > 0 && position.x < Screen.width)
+                {
+                    _distanceToScreen = _pickerCamera.WorldToScreenPoint(gameObject.transform.position).z;
+                    _mousePos = _pickerCamera.ScreenToWorldPoint(new Vector3(position.x, position.y, _distanceToScreen ));
                     
-                OnMousePressing.SafeInvoke(_mousePos.x * Time.deltaTime);
+                    OnMousePressing.SafeInvoke(_mousePos.x);
+                }
             }
+            
+            OnMouseReleasing.SafeInvoke();
         }
     }
 }

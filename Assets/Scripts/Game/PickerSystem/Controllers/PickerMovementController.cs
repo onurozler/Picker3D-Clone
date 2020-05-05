@@ -1,25 +1,31 @@
-﻿using UnityEngine;
+﻿using System;
+using DG.Tweening;
+using UnityEngine;
 
 namespace Game.PickerSystem.Controllers
 {
     public class PickerMovementController : MonoBehaviour
     {
         private float _speed;
-        private Rigidbody _pickerRigidbody;
         private PickerInputController _pickerInputController;
         
-        public void Initialize(PickerInputController pickerInputController, Rigidbody pickerRigidbody)
+        public void Initialize(PickerInputController pickerInputController )
         {
             _speed = 2f;
             _pickerInputController = pickerInputController;
-            _pickerRigidbody = pickerRigidbody;
 
             _pickerInputController.OnMousePressing += MovePicker;
+            _pickerInputController.OnMouseReleasing += MoveForward;
         }
 
         private void MovePicker(float mouseX)
         {
-            _pickerRigidbody.position += transform.right * (mouseX * _speed);
+            transform.DOMoveX(mouseX, 0.5f);
+        }
+
+        private void MoveForward()
+        {
+            transform.DOMoveZ(transform.position.z + 0.5f, 0.5f);
         }
         
     }
