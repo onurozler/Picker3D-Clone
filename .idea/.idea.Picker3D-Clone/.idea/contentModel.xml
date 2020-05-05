@@ -446,6 +446,16 @@
               <e p="Base" t="Include">
                 <e p="PickerBase.cs" t="Include" />
               </e>
+              <e p="Controllers" t="Include">
+                <e p="PickerInputController.cs" t="Include" />
+                <e p="PickerMovementController.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="Helpers" t="Include">
+            <e p="Utils" t="Include">
+              <e p="OnurExtensionMethods.cs" t="Include" />
+              <e p="Timer.cs" t="Include" />
             </e>
           </e>
         </e>
