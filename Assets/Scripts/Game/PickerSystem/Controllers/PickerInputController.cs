@@ -12,10 +12,12 @@ namespace Game.PickerSystem.Controllers
         private Camera _pickerCamera;
         private Vector3 _mousePos;
         private float _distanceToScreen;
+        private float _xThreshHold;
 
         public void Initialize(Camera cam)
         {
             _pickerCamera = cam;
+            _xThreshHold = 3f;
         }
         
         private void FixedUpdate()
@@ -27,8 +29,11 @@ namespace Game.PickerSystem.Controllers
                 {
                     _distanceToScreen = _pickerCamera.WorldToScreenPoint(gameObject.transform.position).z;
                     _mousePos = _pickerCamera.ScreenToWorldPoint(new Vector3(position.x, position.y, _distanceToScreen ));
+                    var xPos = _mousePos.x;
+                    if(xPos > _xThreshHold || xPos < -_xThreshHold)
+                        xPos = Mathf.Clamp(_mousePos.x, -_xThreshHold+0.2f, _xThreshHold);
                     
-                    OnMousePressing.SafeInvoke(_mousePos.x);
+                    OnMousePressing.SafeInvoke(xPos);
                 }
             }
             
