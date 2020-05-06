@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Game.PickerSystem.Controllers;
+using UnityEngine;
 
 namespace Game.PlatformSystem.Base
 {
@@ -10,6 +11,16 @@ namespace Game.PlatformSystem.Base
         {
             base.Initialize();
             
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            Debug.Log(other.name);
+            var picker = other.GetComponent<PickerPhysicsController>();
+            if (picker != null)
+            {
+                picker.PushCollectables();
+            }
         }
     }
 }

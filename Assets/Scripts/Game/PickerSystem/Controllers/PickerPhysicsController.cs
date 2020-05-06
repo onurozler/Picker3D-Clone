@@ -13,6 +13,14 @@ namespace Game.PickerSystem.Controllers
         {
             _pickerPhysicsManager = pickerPhysicsManager;
         }
+
+        public void PushCollectables()
+        {
+            foreach (var collectable in _pickerPhysicsManager.GetCollectables())
+            {
+                collectable.Push();
+            }
+        }
         
         private void OnTriggerEnter(Collider other)
         {
@@ -20,7 +28,6 @@ namespace Game.PickerSystem.Controllers
             if (collectable != null)
             {
                 _pickerPhysicsManager.AddCollectable(collectable);
-                Debug.Log("test");
             }
         }
 
@@ -30,8 +37,6 @@ namespace Game.PickerSystem.Controllers
             if (collectable != null)
             {
                 _pickerPhysicsManager.RemoveCollectable(collectable);
-                Debug.Log("test2");
-
             }
         }
     }

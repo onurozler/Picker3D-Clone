@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using Game.CollectableSystem;
 
 namespace Game.PickerSystem.Managers
@@ -22,6 +23,11 @@ namespace Game.PickerSystem.Managers
             _collectables.Remove(collectableBase);
         }
 
+        public List<CollectableBase> GetCollectables()
+        {
+            return _collectables;
+        }
+        
         public void Clear()
         {
             _collectables.Clear();
