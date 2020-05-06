@@ -1,7 +1,5 @@
-﻿using System;
-using DG.Tweening;
+﻿using DG.Tweening;
 using Game.GameEvents;
-using Game.PickerSystem.Base;
 using Game.PickerSystem.Controllers;
 using Game.PlatformSystem.CheckPointControllers;
 using UnityEngine;

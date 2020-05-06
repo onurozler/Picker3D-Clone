@@ -449,6 +449,14 @@
               <e p="GameEvent.cs" t="Include" />
               <e p="GameEventBus.cs" t="Include" />
             </e>
+            <e p="LevelSystem" t="Include">
+              <e p="LevelData.cs" t="Include" />
+              <e p="LevelGenerator.cs" t="Include" />
+            </e>
+            <e p="Managers" t="Include">
+              <e p="AssetManager.cs" t="Include" />
+              <e p="GameManager.cs" t="Include" />
+            </e>
             <e p="PickerSystem" t="Include">
               <e p="Base" t="Include">
                 <e p="PickerBase.cs" t="Include" />
@@ -464,18 +472,27 @@
             <e p="PlatformSystem" t="Include">
               <e p="Base" t="Include">
                 <e p="CheckPoint.cs" t="Include" />
+                <e p="FinalPlatform.cs" t="Include" />
+                <e p="NormalPlatform.cs" t="Include" />
                 <e p="PlatformBase.cs" t="Include" />
               </e>
               <e p="CheckPointControllers" t="Include">
                 <e p="CheckPointCounterPlatform.cs" t="Include" />
               </e>
             </e>
+            <e p="View" t="Include">
+              <e p="PlayerView.cs" t="Include" />
+            </e>
           </e>
           <e p="Helpers" t="Include">
+            <e p="GenericSingleton.cs" t="Include" />
             <e p="Utils" t="Include">
               <e p="OnurExtensionMethods.cs" t="Include" />
               <e p="Timer.cs" t="Include" />
             </e>
+          </e>
+          <e p="Installers" t="Include">
+            <e p="GameInstaller.cs" t="Include" />
           </e>
         </e>
       </e>

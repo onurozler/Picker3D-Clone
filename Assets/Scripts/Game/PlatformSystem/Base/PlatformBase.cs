@@ -15,6 +15,7 @@ namespace Game.PlatformSystem.Base
     public enum PlatformType
     {
         NORMAL,
-        CHECKPOINT
+        CHECKPOINT,
+        FINAL
     }
 }
