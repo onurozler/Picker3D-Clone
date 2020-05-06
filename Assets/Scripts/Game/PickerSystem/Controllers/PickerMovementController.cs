@@ -25,7 +25,7 @@ namespace Game.PickerSystem.Controllers
 
         private void MoveForward()
         {
-            transform.DOMoveZ(transform.position.z + 0.5f, 0.5f);
+            transform.DOMoveZ(transform.position.z + 1f, 0.5f);
         }
         
     }
