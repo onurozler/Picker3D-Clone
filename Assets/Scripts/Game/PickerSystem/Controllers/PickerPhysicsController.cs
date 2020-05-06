@@ -1,8 +1,6 @@
-﻿using System;
-using Game.CollectableSystem;
+﻿using Game.CollectableSystem;
 using Game.PickerSystem.Managers;
 using UnityEngine;
-using Utils;
 
 namespace Game.PickerSystem.Controllers
 {
@@ -20,8 +18,6 @@ namespace Game.PickerSystem.Controllers
         public void PushCollectables()
         {
             _pickerMovementController.Deactivate();
-            Timer.Instance.TimerWait(2f, () => _pickerMovementController.Activate());
-            
             foreach (var collectable in _pickerPhysicsManager.GetCollectables())
             {
                 collectable.Push();
