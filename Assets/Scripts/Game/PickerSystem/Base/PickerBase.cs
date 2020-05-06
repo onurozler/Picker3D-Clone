@@ -1,4 +1,5 @@
-﻿using Game.PickerSystem.Controllers;
+﻿using Game.GameEvents;
+using Game.PickerSystem.Controllers;
 using Game.PickerSystem.Managers;
 using UnityEngine;
 
@@ -32,6 +33,8 @@ namespace Game.PickerSystem.Base
             
             _pickerMovementController.Initialize(_pickerCamera);
             _pickerPhysicsController.Initialize(_pickerPhysicsManager,_pickerMovementController);
+            
+            GameEventBus.SubscribeEvent(GameEventType.CHECKPOINT, ()=> _pickerMovementController.Activate());
         }
         
         private void LateUpdate()

@@ -445,6 +445,10 @@
             <e p="CollectableSystem" t="Include">
               <e p="CollectableBase.cs" t="Include" />
             </e>
+            <e p="GameEvents" t="Include">
+              <e p="GameEvent.cs" t="Include" />
+              <e p="GameEventBus.cs" t="Include" />
+            </e>
             <e p="PickerSystem" t="Include">
               <e p="Base" t="Include">
                 <e p="PickerBase.cs" t="Include" />

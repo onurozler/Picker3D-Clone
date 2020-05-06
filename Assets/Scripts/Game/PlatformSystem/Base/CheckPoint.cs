@@ -1,5 +1,7 @@
 ﻿using System;
 using DG.Tweening;
+using Game.GameEvents;
+using Game.PickerSystem.Base;
 using Game.PickerSystem.Controllers;
 using Game.PlatformSystem.CheckPointControllers;
 using UnityEngine;
@@ -34,14 +36,19 @@ namespace Game.PlatformSystem.Base
         {
             if (_checkPointCounterPlatform.GetCounter() > Target)
             {
-                Debug.Log("CheckPoint!");
                 _checkPointCounterPlatform.SuccesfulAction();
                 _gate1.transform.DORotate(new Vector3(-60,90,90), 1f);
-                _gate2.transform.DORotate(new Vector3(60,90,90), 1f);
+                _gate2.transform.DORotate(new Vector3(60,90,90), 1f).OnComplete(()=>
+                {
+                    GameEventBus.InvokeEvent(GameEventType.CHECKPOINT);
+                });
+                
             }
             else
             {
                 Debug.Log("Fail");
+                
+                GameEventBus.InvokeEvent(GameEventType.FAIL);
             }
 
             
