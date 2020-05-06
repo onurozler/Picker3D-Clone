@@ -1,4 +1,5 @@
 ﻿using Game.PickerSystem.Controllers;
+using Game.PickerSystem.Managers;
 using UnityEngine;
 
 namespace Game.PickerSystem.Base
@@ -6,12 +7,13 @@ namespace Game.PickerSystem.Base
     public class PickerBase : MonoBehaviour
     {
         private Camera _pickerCamera;
-        private Rigidbody _pickerRigidbody;
         private Vector3 _cameraOffset;
 
-        
+
+        private PickerPhysicsManager _pickerPhysicsManager;
+
+        private PickerPhysicsController _pickerPhysicsController;
         private PickerMovementController _pickerMovementController;
-        private PickerInputController _pickerInputController;
 
         private void Awake()
         {
@@ -23,12 +25,13 @@ namespace Game.PickerSystem.Base
             _pickerCamera = _pickerCamera == null ? Camera.main : _pickerCamera;
             _cameraOffset = _pickerCamera.transform.position - transform.position;
             
-            _pickerRigidbody = GetComponentInChildren<Rigidbody>();
-            _pickerInputController = GetComponent<PickerInputController>();
+            _pickerPhysicsManager = new PickerPhysicsManager();
+
             _pickerMovementController = GetComponent<PickerMovementController>();
+            _pickerPhysicsController = GetComponent<PickerPhysicsController>();
             
-            _pickerInputController.Initialize(_pickerCamera);
-            _pickerMovementController.Initialize(_pickerInputController);
+            _pickerMovementController.Initialize();
+            _pickerPhysicsController.Initialize(_pickerPhysicsManager);
         }
         
         private void LateUpdate()

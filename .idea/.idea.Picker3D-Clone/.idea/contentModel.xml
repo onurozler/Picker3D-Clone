@@ -442,13 +442,25 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="Game" t="Include">
+            <e p="CollectableSystem" t="Include">
+              <e p="CollectableBase.cs" t="Include" />
+            </e>
             <e p="PickerSystem" t="Include">
               <e p="Base" t="Include">
                 <e p="PickerBase.cs" t="Include" />
               </e>
               <e p="Controllers" t="Include">
-                <e p="PickerInputController.cs" t="Include" />
                 <e p="PickerMovementController.cs" t="Include" />
+                <e p="PickerPhysicsController.cs" t="Include" />
+              </e>
+              <e p="Managers" t="Include">
+                <e p="PickerPhysicsManager.cs" t="Include" />
+              </e>
+            </e>
+            <e p="PlatformSystem" t="Include">
+              <e p="Base" t="Include">
+                <e p="CheckPoint.cs" t="Include" />
+                <e p="PlatformBase.cs" t="Include" />
               </e>
             </e>
           </e>
