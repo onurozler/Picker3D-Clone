@@ -3,7 +3,7 @@ using Game.CollectableSystem;
 using TMPro;
 using UnityEngine;
 
-namespace Game.PlatformSystem.Base
+namespace Game.PlatformSystem.CheckPointControllers
 {
     public class CheckPointCounterPlatform : MonoBehaviour
     {
@@ -11,16 +11,18 @@ namespace Game.PlatformSystem.Base
         private int _counter;
         private TextMeshPro _textMesh;
 
-        public void Initialize()
+        public void Initialize(int target)
         {
             _counter = 0;
-            _targetCounter = 0;
+            _targetCounter = target;
             _textMesh = GetComponentInChildren<TextMeshPro>();
+            _textMesh.text = Mathf.RoundToInt(_counter) +"/" + _targetCounter;
         }
 
-        public void SetTarget(int target)
+        public void SuccesfulAction()
         {
-            _targetCounter = target;
+            transform.DOMoveY(0, 1f);
+            _textMesh.enabled = false;
         }
         
         public int GetCounter()
@@ -39,7 +41,7 @@ namespace Game.PlatformSystem.Base
                 picker.Deactivate();
                 DOVirtual.Float(_counter,++_counter,1f, value =>
                 {
-                    _textMesh.text = Mathf.RoundToInt(value) +" / " + _targetCounter;
+                    _textMesh.text = Mathf.RoundToInt(value) +"/" + _targetCounter;
                 });
             }
         }
