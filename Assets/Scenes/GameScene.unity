@@ -844,6 +844,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 193053167}
+  - component: {fileID: 1970207063581096492}
   m_Layer: 0
   m_Name: Platform
   m_TagString: Untagged
@@ -4243,6 +4244,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1291363012}
+  - component: {fileID: 1291363013}
   m_Layer: 0
   m_Name: LevelGenerator
   m_TagString: Untagged
@@ -4264,6 +4266,18 @@ Transform:
   m_Father: {fileID: 1720535863}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1291363013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1291363011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e6c6ffae8eff34f87159b8bafff7ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1303429316
 GameObject:
   m_ObjectHideFlags: 0
@@ -7225,6 +7239,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9911aa0f411682344a435e1bc8076dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pickerBase: {fileID: 3235250729132119506}
+  _levelGenerator: {fileID: 1291363013}
 --- !u!114 &1788999094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9255,6 +9271,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1970207063581096492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193053166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 936f94b815ce172489c31e8f202dc6d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3235250729132119502
 GameObject:
   m_ObjectHideFlags: 0
@@ -9270,7 +9298,7 @@ GameObject:
   - component: {fileID: 3235250729132119503}
   - component: {fileID: 3235250729132119507}
   m_Layer: 0
-  m_Name: PickerModel
+  m_Name: PickerBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

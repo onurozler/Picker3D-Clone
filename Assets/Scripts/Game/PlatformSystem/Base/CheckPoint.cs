@@ -32,7 +32,7 @@ namespace Game.PlatformSystem.Base
 
         private void CheckContinue()
         {
-            if (_checkPointCounterPlatform.GetCounter() > Target)
+            if (_checkPointCounterPlatform.GetCounter() >= Target)
             {
                 _checkPointCounterPlatform.SuccesfulAction();
                 _gate1.transform.DORotate(new Vector3(-60,90,90), 1f);

@@ -9,17 +9,11 @@ namespace Game.PickerSystem.Base
     {
         private Camera _pickerCamera;
         private Vector3 _cameraOffset;
-
-
+        
         private PickerPhysicsManager _pickerPhysicsManager;
 
         private PickerPhysicsController _pickerPhysicsController;
         private PickerMovementController _pickerMovementController;
-
-        private void Awake()
-        {
-            Initialize();
-        }
 
         public void Initialize()
         {
