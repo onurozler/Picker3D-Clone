@@ -21,6 +21,11 @@ namespace Game.Managers
             _platformBases = Resources.LoadAll<PlatformBase>(PLATFORM_PATH).ToList();
         }
 
+        public PlatformBase GetPlatform(PlatformType platformType)
+        {
+            return _platformBases?.FirstOrDefault(x => x.PlatformType == platformType);
+        }
+        
         public LevelData LoadLevel(int levelindex)
         {
             return Resources.Load<LevelData>(LEVEL_PATH + levelindex);

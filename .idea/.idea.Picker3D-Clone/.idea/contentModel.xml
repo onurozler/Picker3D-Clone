@@ -452,6 +452,7 @@
             <e p="LevelSystem" t="Include">
               <e p="LevelData.cs" t="Include" />
               <e p="LevelGenerator.cs" t="Include" />
+              <e p="PoolManager.cs" t="Include" />
             </e>
             <e p="Managers" t="Include">
               <e p="AssetManager.cs" t="Include" />

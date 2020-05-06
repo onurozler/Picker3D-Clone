@@ -1,18 +1,27 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Game.Managers;
+using Game.PickerSystem.Base;
 using UnityEngine;
+using Zenject;
 
-public class LevelGenerator : MonoBehaviour
+namespace Game.LevelSystem
 {
-    // Start is called before the first frame update
-    void Start()
+    public class LevelGenerator : MonoBehaviour
     {
+        private PickerBase _pickerBase;
+        private int _levelIndex;
         
-    }
+        [Inject]
+        private void OnInstaller(PickerBase pickerBase)
+        {
+            _pickerBase = pickerBase;
+            _levelIndex = 0;
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public void GenerateLevel()
+        {
+            var levelData = AssetManager.Instance.LoadLevel(_levelIndex);
+            var platformList = levelData.PlatformDatas;
+
+        }
     }
 }

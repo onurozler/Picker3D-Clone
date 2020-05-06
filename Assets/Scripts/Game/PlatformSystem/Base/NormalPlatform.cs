@@ -5,6 +5,5 @@ namespace Game.PlatformSystem.Base
     {
         public override PlatformType PlatformType => PlatformType.NORMAL;
         
-        
     }
 }
