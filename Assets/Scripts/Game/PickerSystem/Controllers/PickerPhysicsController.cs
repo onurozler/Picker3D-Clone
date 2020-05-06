@@ -2,20 +2,26 @@
 using Game.CollectableSystem;
 using Game.PickerSystem.Managers;
 using UnityEngine;
+using Utils;
 
 namespace Game.PickerSystem.Controllers
 {
     public class PickerPhysicsController : MonoBehaviour
     {
         private PickerPhysicsManager _pickerPhysicsManager;
+        private PickerMovementController _pickerMovementController;
         
-        public void Initialize(PickerPhysicsManager pickerPhysicsManager)
+        public void Initialize(PickerPhysicsManager pickerPhysicsManager, PickerMovementController pickerMovementController)
         {
             _pickerPhysicsManager = pickerPhysicsManager;
+            _pickerMovementController = pickerMovementController;
         }
 
         public void PushCollectables()
         {
+            _pickerMovementController.Deactivate();
+            Timer.Instance.TimerWait(2f, () => _pickerMovementController.Activate());
+            
             foreach (var collectable in _pickerPhysicsManager.GetCollectables())
             {
                 collectable.Push();

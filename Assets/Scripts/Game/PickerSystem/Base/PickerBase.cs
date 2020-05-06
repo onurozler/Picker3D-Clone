@@ -30,8 +30,8 @@ namespace Game.PickerSystem.Base
             _pickerMovementController = GetComponent<PickerMovementController>();
             _pickerPhysicsController = GetComponent<PickerPhysicsController>();
             
-            _pickerMovementController.Initialize();
-            _pickerPhysicsController.Initialize(_pickerPhysicsManager);
+            _pickerMovementController.Initialize(_pickerCamera);
+            _pickerPhysicsController.Initialize(_pickerPhysicsManager,_pickerMovementController);
         }
         
         private void LateUpdate()

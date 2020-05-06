@@ -805,8 +805,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 9.438952, y: 1.3074484, z: 0.08682442}
-  m_Center: {x: -0.20450354, y: 0.1537242, z: -0.07945118}
+  m_Size: {x: 9.438952, y: 1.3074484, z: 0.02912636}
+  m_Center: {x: -0.20450354, y: 0.1537242, z: -0.01832447}
 --- !u!114 &1137976309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1141,8 +1141,8 @@ GameObject:
   - component: {fileID: 1485770768}
   - component: {fileID: 1485770767}
   - component: {fileID: 1485770766}
-  - component: {fileID: 1485770765}
   - component: {fileID: 1485770764}
+  - component: {fileID: 1485770765}
   - component: {fileID: 1485770763}
   m_Layer: 0
   m_Name: CollectableBall

@@ -12,7 +12,7 @@ namespace Game.CollectableSystem
 
         public void Push()
         {
-            _rigidbody.AddForce(Vector3.forward * 50f);
+            _rigidbody.AddForceAtPosition(Vector3.forward * 20,transform.position);
         }
     }
 }
