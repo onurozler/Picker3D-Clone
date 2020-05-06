@@ -17,7 +17,7 @@ namespace Game.PickerSystem.Controllers
         {
             _pickerCamera = pickerCamera;
             _forwardSpeed = 5f;
-            _xSpeed = 7f;
+            _xSpeed = 10f;
             Activate();
         }
 
@@ -45,7 +45,7 @@ namespace Game.PickerSystem.Controllers
                 float direction = _xSpeed;
                 direction = _mousePos.x > transform.position.x ? direction : -direction;
                 
-                if(Math.Abs(_mousePos.x - transform.position.x) > 0.1f)
+                if(Math.Abs(_mousePos.x - transform.position.x) > 0.5f)
                     transform.Translate(Time.deltaTime * direction,0,0);
             }
             transform.Translate(0,0,Time.deltaTime * _forwardSpeed);

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using DG.Tweening;
+using UnityEngine;
 
 namespace Game.CollectableSystem
 {
@@ -12,7 +13,7 @@ namespace Game.CollectableSystem
 
         public void Push()
         {
-            _rigidbody.AddForceAtPosition(Vector3.forward * 20,transform.position);
+            _rigidbody.DOMoveZ(transform.position.z + 8f, 1f);
         }
     }
 }
