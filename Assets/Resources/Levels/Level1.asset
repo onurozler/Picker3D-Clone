@@ -19,12 +19,12 @@ MonoBehaviour:
   - Position: {x: 0, y: 0, z: 60}
     PlatformType: 1
     CheckPointCount: 5
-  - Position: {x: 0, y: 0, z: 70}
+  - Position: {x: 0, y: 0, z: 69}
     PlatformType: 0
     CheckPointCount: 0
-  - Position: {x: 0, y: 0, z: 130}
+  - Position: {x: 0, y: 0, z: 129}
     PlatformType: 1
     CheckPointCount: 10
-  - Position: {x: 0, y: 0, z: 140}
+  - Position: {x: 0, y: 0, z: 139}
     PlatformType: 2
     CheckPointCount: 0

@@ -10,16 +10,11 @@ namespace Game.PlatformSystem.Base
     public class CheckPoint : PlatformBase
     {
         public override PlatformType PlatformType => PlatformType.CHECKPOINT;
-        public int Target = 3;
+        private int _target;
 
         private CheckPointCounterPlatform _checkPointCounterPlatform;
         private Transform _gate1;
         private Transform _gate2;
-
-        private void Awake()
-        {
-            Initialize();
-        }
 
         public override void Initialize()
         {
@@ -27,12 +22,17 @@ namespace Game.PlatformSystem.Base
             _checkPointCounterPlatform = GetComponentInChildren<CheckPointCounterPlatform>();
             _gate1 = transform.Find("Gate1");
             _gate2 = transform.Find("Gate2");
-            _checkPointCounterPlatform.Initialize(Target);
+        }
+
+        public void SetTarget(int aim)
+        {
+            _target = aim;
+            _checkPointCounterPlatform.Initialize(_target);
         }
 
         private void CheckContinue()
         {
-            if (_checkPointCounterPlatform.GetCounter() > Target)
+            if (_checkPointCounterPlatform.GetCounter() >= _target)
             {
                 _checkPointCounterPlatform.SuccesfulAction();
                 _gate1.transform.DORotate(new Vector3(-60,90,90), 1f);

@@ -29,7 +29,7 @@ namespace Game.Managers
 
         private void InitializeGame()
         {
-            
+            _levelGenerator.GenerateLevel();
         }
     }
 }

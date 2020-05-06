@@ -9,11 +9,13 @@ namespace Installers
     {
         [SerializeField] private PickerBase _pickerBase;
         [SerializeField] private LevelGenerator _levelGenerator;
+        [SerializeField] private PoolManager _poolManager;
         
         public override void InstallBindings()
         {
             Container.BindInstance(_pickerBase);
             Container.BindInstance(_levelGenerator);
+            Container.BindInstance(_poolManager);
         }
     }
 }

@@ -15,7 +15,7 @@ namespace Game.LevelSystem
             _platformBases = new List<PlatformBase>();
         }
         
-        public PlatformBase GetCreamAvailableCream(PlatformType platformType)
+        public PlatformBase GetAvailablePlatform(PlatformType platformType)
         {
             var platform = _platformBases?.FirstOrDefault(x => !x.IsActive);
             if (platform == null)

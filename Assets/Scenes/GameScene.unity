@@ -851,7 +851,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &193053167
 Transform:
   m_ObjectHideFlags: 0
@@ -2380,7 +2380,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &846683158
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2407,7 +2407,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsActive: 0
-  Target: 10
 --- !u!4 &846683160
 Transform:
   m_ObjectHideFlags: 0
@@ -3872,7 +3871,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1137976307
 Transform:
   m_ObjectHideFlags: 0
@@ -3918,7 +3917,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsActive: 0
-  Target: 5
 --- !u!1 &1207809382
 GameObject:
   m_ObjectHideFlags: 0
@@ -5232,7 +5230,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1417896356
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7288,6 +7286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pickerBase: {fileID: 3235250729132119506}
   _levelGenerator: {fileID: 1291363013}
+  _poolManager: {fileID: 310568446}
 --- !u!114 &1788999094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8542,7 +8541,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1989294223
 Transform:
   m_ObjectHideFlags: 0
