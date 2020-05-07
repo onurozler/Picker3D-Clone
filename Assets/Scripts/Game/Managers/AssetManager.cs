@@ -15,6 +15,7 @@ namespace Game.Managers
         private List<PlatformBase> _platformBases;
         
         public Material GroundMaterial;
+        public Material PickerMaterial;
 
         public void LoadPlatformPrefabs()
         {

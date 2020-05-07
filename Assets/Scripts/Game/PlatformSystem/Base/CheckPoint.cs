@@ -15,19 +15,19 @@ namespace Game.PlatformSystem.Base
         private CheckPointCounterPlatform _checkPointCounterPlatform;
         private Transform _gate1;
         private Transform _gate2;
-
-        public override void Initialize()
-        {
-            base.Initialize();
-            _checkPointCounterPlatform = GetComponentInChildren<CheckPointCounterPlatform>();
-            _gate1 = transform.Find("Gate1");
-            _gate2 = transform.Find("Gate2");
-        }
+        private Vector3 _firstPosGate1;
+        private Vector3 _firstPosGate2;
 
         public void SetTarget(int aim)
         {
             _target = aim;
+            _checkPointCounterPlatform = GetComponentInChildren<CheckPointCounterPlatform>(true);            
+            _gate1 = transform.Find("Gate1");
+            _gate2 = transform.Find("Gate2");
+
             _checkPointCounterPlatform.Initialize(_target);
+            
+            GameEventBus.SubscribeEvent(GameEventType.FINISHED,Reset);
         }
 
         private void CheckContinue()
@@ -48,8 +48,12 @@ namespace Game.PlatformSystem.Base
                 
                 GameEventBus.InvokeEvent(GameEventType.FAIL);
             }
+        }
 
-            
+        private void Reset()
+        {
+            _gate1.transform.eulerAngles = new Vector3(0,90,90);
+            _gate2.transform.eulerAngles = new Vector3(0,90,90);
         }
         
         private void OnTriggerEnter(Collider other)

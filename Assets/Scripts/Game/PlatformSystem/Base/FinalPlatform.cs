@@ -1,6 +1,7 @@
 ﻿using Game.GameEvents;
 using Game.PickerSystem.Controllers;
 using UnityEngine;
+using Utils;
 
 namespace Game.PlatformSystem.Base
 {
@@ -14,7 +15,8 @@ namespace Game.PlatformSystem.Base
             if (picker != null)
             {
                 Debug.Log("Finished!");
-                GameEventBus.InvokeEvent(GameEventType.FINISHED);
+
+                Timer.Instance.TimerWait(2f, () => GameEventBus.InvokeEvent(GameEventType.FINISHED));
             }
         }
     }

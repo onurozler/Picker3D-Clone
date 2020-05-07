@@ -10,17 +10,17 @@ namespace Game.LevelSystem
     {
         private List<PlatformBase> _platformBases;
 
-        public void Initialize()
-        {
-            _platformBases = new List<PlatformBase>();
-        }
-        
         public PlatformBase GetAvailablePlatform(PlatformType platformType)
         {
+            if(_platformBases == null)
+                _platformBases = new List<PlatformBase>();
+            
             var platform = _platformBases?.FirstOrDefault(x => !x.IsActive);
             if (platform == null)
             {
-                platform = Instantiate(AssetManager.Instance.GetPlatform(platformType), transform);
+                platform = AssetManager.Instance.GetPlatform(platformType);
+                platform.Initialize();
+                platform = Instantiate(platform, transform);
                 _platformBases?.Add(platform);
             }
             

@@ -1,5 +1,6 @@
 ﻿using DG.Tweening;
 using Game.CollectableSystem;
+using Game.GameEvents;
 using Game.Managers;
 using TMPro;
 using UnityEngine;
@@ -12,14 +13,18 @@ namespace Game.PlatformSystem.CheckPointControllers
         private int _counter;
         private TextMeshPro _textMesh;
         private MeshRenderer _meshRenderer;
+        private Vector3 _firstPos;
 
         public void Initialize(int target)
         {
             _counter = 0;
             _targetCounter = target;
-            _textMesh = GetComponentInChildren<TextMeshPro>();
+            _textMesh = GetComponentInChildren<TextMeshPro>(true);
             _meshRenderer = GetComponent<MeshRenderer>();
             _textMesh.text = Mathf.RoundToInt(_counter) +"/" + _targetCounter;
+            _firstPos = transform.position;
+            
+            GameEventBus.SubscribeEvent(GameEventType.FINISHED, Reset);
         }
 
         public void SuccesfulAction()
@@ -34,6 +39,14 @@ namespace Game.PlatformSystem.CheckPointControllers
             var temp = _counter;
             _counter = 0;
             return temp;
+        }
+
+        private void Reset()
+        {
+            transform.position = _firstPos;
+            _textMesh.enabled = true;
+            _textMesh.text = Mathf.RoundToInt(_counter) +"/" + _targetCounter;
+            _meshRenderer.material = AssetManager.Instance.PickerMaterial;
         }
         
         private void OnCollisionEnter(Collision other)
