@@ -32,6 +32,12 @@ namespace Game.LevelSystem
                         GenerateLevel();
                     });
                 });
+            
+            GameEventBus.SubscribeEvent(GameEventType.FAIL, () =>
+            {
+                _poolManager.DeactivateWholePool();
+                GenerateLevel();
+            });
         }
 
         public void GenerateLevel()
@@ -52,6 +58,7 @@ namespace Game.LevelSystem
 
                 if (platform.PlatformType == PlatformType.CHECKPOINT)
                     platform.GetComponent<CheckPoint>()?.SetTarget(platformData.CheckPointCount);
+                
             }
 
             var ballPacks = levelData.BallPackDatas;

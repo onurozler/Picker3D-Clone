@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Game.CollectableSystem;
+using Game.GameEvents;
 using UnityEngine;
 
 namespace Game.LevelSystem.BallPacks

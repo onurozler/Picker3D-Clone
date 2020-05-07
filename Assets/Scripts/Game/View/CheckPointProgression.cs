@@ -41,6 +41,12 @@ namespace Game.View
                 _pointClaim.ChangePoint(0);
                 _point = 0;
             });
+            GameEventBus.SubscribeEvent(GameEventType.FAIL, () =>
+            {
+                DeActivateCheckPointItem();
+                _pointClaim.ChangePoint(0);
+                _point = 0;
+            });
 
             _pickerBase.OnPointGained += ChangePoint;
         }

@@ -32,6 +32,7 @@ namespace Game.PickerSystem.Base
             _pickerPhysicsController.Initialize(_pickerPhysicsManager,_pickerMovementController);
             
             GameEventBus.SubscribeEvent(GameEventType.CHECKPOINT, ()=> _pickerMovementController.Activate());
+            GameEventBus.SubscribeEvent(GameEventType.FAIL, ()=>_pickerMovementController.Activate());
         }
         
         private void LateUpdate()

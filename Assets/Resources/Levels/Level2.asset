@@ -24,7 +24,7 @@ MonoBehaviour:
     CheckPointCount: 0
   - Position: {x: 0, y: 0, z: 129}
     PlatformType: 1
-    CheckPointCount: 20
+    CheckPointCount: 15
   - Position: {x: 0, y: 0, z: 139}
     PlatformType: 2
     CheckPointCount: 0

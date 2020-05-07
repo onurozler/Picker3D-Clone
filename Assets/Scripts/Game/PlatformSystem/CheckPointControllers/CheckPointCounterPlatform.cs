@@ -22,9 +22,11 @@ namespace Game.PlatformSystem.CheckPointControllers
             _textMesh = GetComponentInChildren<TextMeshPro>(true);
             _meshRenderer = GetComponent<MeshRenderer>();
             _textMesh.text = Mathf.RoundToInt(_counter) +"/" + _targetCounter;
-            _firstPos = transform.position;
+            _firstPos = new Vector3(transform.position.x,-3.43f,transform.position.z);
             
             GameEventBus.SubscribeEvent(GameEventType.FINISHED, Reset);
+            GameEventBus.SubscribeEvent(GameEventType.FAIL, Reset);
+
         }
 
         public void SuccesfulAction()

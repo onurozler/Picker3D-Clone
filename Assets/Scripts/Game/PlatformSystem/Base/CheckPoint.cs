@@ -16,8 +16,8 @@ namespace Game.PlatformSystem.Base
         private CheckPointCounterPlatform _checkPointCounterPlatform;
         private Transform _gate1;
         private Transform _gate2;
-        private Vector3 _firstPosGate1;
-        private Vector3 _firstPosGate2;
+
+        private Vector3 _firstPos;
 
         public override void Initialize()
         {
@@ -25,7 +25,10 @@ namespace Game.PlatformSystem.Base
             _checkPointCounterPlatform = GetComponentInChildren<CheckPointCounterPlatform>(true);            
             _gate1 = transform.Find("Gate1");
             _gate2 = transform.Find("Gate2");
+            
             GameEventBus.SubscribeEvent(GameEventType.FINISHED,Reset);
+            GameEventBus.SubscribeEvent(GameEventType.FAIL,Reset);
+
         }
 
         public void SetTarget(int aim)
@@ -50,7 +53,6 @@ namespace Game.PlatformSystem.Base
             else
             {
                 Debug.Log("Fail");
-                
                 GameEventBus.InvokeEvent(GameEventType.FAIL);
             }
         }
