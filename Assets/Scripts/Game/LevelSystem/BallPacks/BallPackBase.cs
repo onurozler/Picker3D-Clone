@@ -38,12 +38,25 @@ namespace Game.LevelSystem.BallPacks
                 _collectableBases[i].transform.localPosition = _positions[i];
                 _collectableBases[i].Activate();
             }
+            
+            PhysicsActivision(true);
         }
 
         public void Deactivate()
         {
             IsActive = false;
             gameObject.SetActive(false);
+            PhysicsActivision(false);
+        }
+
+        private void PhysicsActivision(bool check)
+        {
+            /* Sometimes when we reset balls, their position may change a bit because of physics interactions,
+              thats why better to implement to make off physics, put correct position and open the physics */
+            foreach (var collectableBase in _collectableBases)
+            {
+                collectableBase.GetComponent<Rigidbody>().isKinematic = !check;
+            }
         }
     }
 

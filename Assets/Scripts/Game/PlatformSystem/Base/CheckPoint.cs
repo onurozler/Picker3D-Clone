@@ -1,5 +1,6 @@
 ﻿using DG.Tweening;
 using Game.GameEvents;
+using Game.PickerSystem.Base;
 using Game.PickerSystem.Controllers;
 using Game.PlatformSystem.CheckPointControllers;
 using UnityEngine;
@@ -18,21 +19,25 @@ namespace Game.PlatformSystem.Base
         private Vector3 _firstPosGate1;
         private Vector3 _firstPosGate2;
 
-        public void SetTarget(int aim)
+        public override void Initialize()
         {
-            _target = aim;
+            base.Initialize();
             _checkPointCounterPlatform = GetComponentInChildren<CheckPointCounterPlatform>(true);            
             _gate1 = transform.Find("Gate1");
             _gate2 = transform.Find("Gate2");
-
-            _checkPointCounterPlatform.Initialize(_target);
-            
             GameEventBus.SubscribeEvent(GameEventType.FINISHED,Reset);
         }
 
-        private void CheckContinue()
+        public void SetTarget(int aim)
         {
-            if (_checkPointCounterPlatform.GetCounter() >= _target)
+            _target = aim;
+            _checkPointCounterPlatform.Initialize(_target);
+        }
+
+        private void CheckContinue(PickerBase picker)
+        {
+            var counter = _checkPointCounterPlatform.GetCounter();
+            if (counter >= _target)
             {
                 _checkPointCounterPlatform.SuccesfulAction();
                 _gate1.transform.DORotate(new Vector3(-60,90,90), 1f);
@@ -40,7 +45,7 @@ namespace Game.PlatformSystem.Base
                 {
                     GameEventBus.InvokeEvent(GameEventType.CHECKPOINT);
                 });
-                
+                picker.OnPointGained.SafeInvoke(counter * 5);
             }
             else
             {
@@ -62,7 +67,7 @@ namespace Game.PlatformSystem.Base
             if (picker != null)
             {
                 picker.PushCollectables();
-                Timer.Instance.TimerWait(2f, CheckContinue);
+                Timer.Instance.TimerWait(2f, ()=> CheckContinue(picker.GetComponent<PickerBase>()));
             }
         }
     }

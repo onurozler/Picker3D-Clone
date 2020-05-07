@@ -1,4 +1,5 @@
-﻿using Game.GameEvents;
+﻿using System;
+using Game.GameEvents;
 using Game.PickerSystem.Controllers;
 using Game.PickerSystem.Managers;
 using UnityEngine;
@@ -7,6 +8,8 @@ namespace Game.PickerSystem.Base
 {
     public class PickerBase : MonoBehaviour
     {
+        public Action<int> OnPointGained;
+        
         private Camera _pickerCamera;
         private Vector3 _cameraOffset;
         

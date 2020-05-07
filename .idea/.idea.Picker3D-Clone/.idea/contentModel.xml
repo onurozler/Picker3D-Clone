@@ -488,6 +488,7 @@
               <e p="CheckPointProgression.cs" t="Include" />
               <e p="Helpers" t="Include">
                 <e p="CheckItem.cs" t="Include" />
+                <e p="PointClaim.cs" t="Include" />
               </e>
               <e p="PlayerView.cs" t="Include" />
             </e>
