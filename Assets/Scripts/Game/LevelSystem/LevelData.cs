@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Game.LevelSystem.BallPacks;
 using Game.PlatformSystem.Base;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ namespace Game.LevelSystem
     public class LevelData : ScriptableObject
     {
         public List<PlatformData> PlatformDatas;
+        public List<BallPackData> BallPackDatas;
     }
     
     [Serializable]
@@ -18,5 +20,12 @@ namespace Game.LevelSystem
         public Vector3 Position;
         public PlatformType PlatformType;
         public int CheckPointCount;
+    }
+
+    [Serializable]
+    public class BallPackData
+    {
+        public Vector3 Position;
+        public BallPackType BallPackType;
     }
 }

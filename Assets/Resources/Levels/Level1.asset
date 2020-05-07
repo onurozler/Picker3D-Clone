@@ -28,3 +28,20 @@ MonoBehaviour:
   - Position: {x: 0, y: 0, z: 139}
     PlatformType: 2
     CheckPointCount: 0
+  BallPackDatas:
+  - Position: {x: -1.5, y: 0, z: 15.46}
+    BallPackType: 0
+  - Position: {x: -1.7, y: 0, z: 19.4}
+    BallPackType: 1
+  - Position: {x: -6.4, y: 0, z: 29.7}
+    BallPackType: 1
+  - Position: {x: -1.5, y: 0, z: 40.4}
+    BallPackType: 1
+  - Position: {x: -1.6, y: 0, z: 99.5}
+    BallPackType: 0
+  - Position: {x: -2, y: 0, z: 106.9}
+    BallPackType: 1
+  - Position: {x: -7, y: 0, z: 114.8}
+    BallPackType: 1
+  - Position: {x: -6.77, y: 0, z: 75.23}
+    BallPackType: 2

@@ -53,6 +53,13 @@ namespace Game.LevelSystem
                 if (platform.PlatformType == PlatformType.CHECKPOINT)
                     platform.GetComponent<CheckPoint>()?.SetTarget(platformData.CheckPointCount);
             }
+
+            var ballPacks = levelData.BallPackDatas;
+            foreach (var ballPack in ballPacks)
+            {
+                var ball = _poolManager.GetAvailableBallPack(ballPack.BallPackType);
+                ball.transform.position = ballPack.Position;
+            }
             
             _pickerBase.transform.position = _pickerStartPosition;
         }

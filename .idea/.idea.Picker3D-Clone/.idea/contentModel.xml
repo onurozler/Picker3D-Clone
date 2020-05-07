@@ -450,6 +450,9 @@
               <e p="GameEventBus.cs" t="Include" />
             </e>
             <e p="LevelSystem" t="Include">
+              <e p="BallPacks" t="Include">
+                <e p="BallPackBase.cs" t="Include" />
+              </e>
               <e p="LevelData.cs" t="Include" />
               <e p="LevelGenerator.cs" t="Include" />
               <e p="PoolManager.cs" t="Include" />
