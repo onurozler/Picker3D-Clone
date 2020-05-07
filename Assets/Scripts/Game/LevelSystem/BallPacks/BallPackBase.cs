@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Game.CollectableSystem;
-using Game.GameEvents;
 using UnityEngine;
 
 namespace Game.LevelSystem.BallPacks
@@ -12,15 +11,17 @@ namespace Game.LevelSystem.BallPacks
         public BallPackType BallPackType;
 
         private List<CollectableBase> _collectableBases;
+        private Vector3 _packPosition;
         private List<Vector3> _positions;
         
         public void Initialize()
         {
             _collectableBases = GetComponentsInChildren<CollectableBase>(true).ToList();
+            _packPosition = transform.position;
             _positions = new List<Vector3>(_collectableBases.Count);
             foreach (var t in _collectableBases)
             {
-                _positions.Add(t.transform.position);
+                _positions.Add(t.transform.localPosition);
             }
 
             IsActive = false;
@@ -30,17 +31,19 @@ namespace Game.LevelSystem.BallPacks
         {
             gameObject.SetActive(true);
             IsActive = true;
+            
+            transform.position = _packPosition;
+            for (int i = 0; i < _collectableBases.Count; i++)
+            {
+                _collectableBases[i].transform.localPosition = _positions[i];
+                _collectableBases[i].Activate();
+            }
         }
 
         public void Deactivate()
         {
-            gameObject.SetActive(false);
             IsActive = false;
-            for (int i = 0; i < _collectableBases.Count; i++)
-            {
-                _collectableBases[i].transform.position = _positions[i];
-                _collectableBases[i].Activate();
-            }
+            gameObject.SetActive(false);
         }
     }
 

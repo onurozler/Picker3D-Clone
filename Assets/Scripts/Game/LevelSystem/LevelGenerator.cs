@@ -25,7 +25,7 @@ namespace Game.LevelSystem
             
             GameEventBus.SubscribeEvent(GameEventType.FINISHED, () =>
                 {
-                    Timer.Instance.TimerWait(1f, () =>
+                    Timer.Instance.TimerWait(2f, () =>
                     {
                         _poolManager.DeactivateWholePool();
                         _levelIndex++; 
